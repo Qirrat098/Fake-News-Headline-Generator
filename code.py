@@ -1,4 +1,4 @@
-import random 
+import random
 
 subjects = [
     "The cat",
@@ -9,9 +9,10 @@ subjects = [
     "The scientist",
     "A musician",
     "The artist",
-    "Auto Rickshaw Driver"]
+    "Auto Rickshaw Driver"
+]
 
-actions= [
+actions = [
     "jumps over",
     "runs around", 
     "sings to",
@@ -21,9 +22,10 @@ actions= [
     "plays with",
     "drives",
     "explains to",
-    "dances with"
+    "dances with",
     "cry with"
 ]
+
 places = [
     "the park",
     "the school",
@@ -38,14 +40,14 @@ places = [
 ]
 
 while True:
-    subjects = random.choice(subjects)
-    actions = random.choice(actions)
-    places = random.choice(places)
+    subject = random.choice(subjects)
+    action = random.choice(actions)
+    place = random.choice(places)
 
-    headline = f"Breaking News: {subjects} {actions} at {places}!" 
-    print("n" + headline)  
+    headline = f"Breaking News: {subject} {action} at {place}!" 
+    print("\n" + headline)  
 
     userinput = input("Do you want to generate another headline? (yes/no): ")
-    if userinput == "no":
+    if userinput.lower() == "no":
         print("Thank you for using the Fake News Headline Generator!")
         break
