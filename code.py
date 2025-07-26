@@ -1,53 +1,31 @@
 import random
+from datetime import datetime
 
-subjects = [
-    "The cat",
-    "A dog",
-    "The teacher",
-    "A student",
-    "The chef",
-    "The scientist",
-    "A musician",
-    "The artist",
-    "Auto Rickshaw Driver"
-]
+subjects = ["A cat", "The scientist", "A musician"]
+actions = ["jumps over", "sings to", "cooks for", "dances with", "explains to"]
+places = ["the park", "the lab", "the concert hall", "the beach"]
 
-actions = [
-    "jumps over",
-    "runs around", 
-    "sings to",
-    "paints",
-    "teaches",
-    "cooks for",
-    "plays with",
-    "drives to",
-    "explains to",
-    "dances with",
-    "cry with"
-]
-
-places = [
-    "the park",
-    "the school",
-    "the kitchen",
-    "the stage",
-    "the lab",
-    "the street",
-    "the gallery",
-    "the concert hall",
-    "the market",
-    "the beach"
+templates = [
+    "Breaking News: {} {} at {}!",
+    "Shocking Update: {} {} in {}!",
+    "Just In: {} {} near {}!",
+    "Live Now: {} {} around {}!"
 ]
 
 while True:
     subject = random.choice(subjects)
     action = random.choice(actions)
     place = random.choice(places)
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    template = random.choice(templates)
+    
+    headline = f"[{timestamp}] {template.format(subject, action, place)}"
+    print("\n" + headline)
 
-    headline = f"Breaking News: {subject} {action} at {place}!" 
-    print("\n" + headline)  
+    with open("headlines.txt", "a") as file:
+        file.write(headline + "\n")
 
-    userinput = input("Do you want to generate another headline? (yes/no): ")
-    if userinput.lower() == "no":
+    again = input("Generate another headline? (yes/no): ").strip().lower()
+    if again == "no":
         print("Thank you for using the Fake News Headline Generator!")
         break
