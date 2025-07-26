@@ -44,3 +44,8 @@ while True:
 
     headline = f "Breaking News: {subjects} {actions} at {places}!" 
     print("n" + headline)  
+
+    userinput = input("Do you want to generate another headline? (yes/no): ")
+    if userinput == "no":
+        print("Thank you for using the Fake News Headline Generator!")
+        break
