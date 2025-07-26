@@ -20,7 +20,7 @@ actions = [
     "teaches",
     "cooks for",
     "plays with",
-    "drives",
+    "drives to",
     "explains to",
     "dances with",
     "cry with"
