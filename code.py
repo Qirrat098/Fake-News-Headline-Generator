@@ -42,4 +42,5 @@ while True:
     actions = random.choice(actions)
     places = random.choice(places)
 
-    headline = f "Breaking News: {subjects} {actions} at {places}!"   
+    headline = f "Breaking News: {subjects} {actions} at {places}!" 
+    print("n" + headline)  
