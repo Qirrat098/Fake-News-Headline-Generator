@@ -38,11 +38,11 @@ places = [
 ]
 
 while True:
-    subjects = randome.choice(subjects)
+    subjects = random.choice(subjects)
     actions = random.choice(actions)
     places = random.choice(places)
 
-    headline = f "Breaking News: {subjects} {actions} at {places}!" 
+    headline = f"Breaking News: {subjects} {actions} at {places}!" 
     print("n" + headline)  
 
     userinput = input("Do you want to generate another headline? (yes/no): ")
